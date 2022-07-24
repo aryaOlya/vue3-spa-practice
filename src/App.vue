@@ -1,11 +1,12 @@
 <template>
   <section>
-    <h1 class="text-center">App Component</h1>
+    <header-component></header-component>
   </section>
+  <router-view></router-view>
 </template>
 
 <script setup>
-
+import HeaderComponent from './components/HeaderComponent'
 
 
 </script>
