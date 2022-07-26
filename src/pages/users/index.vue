@@ -1,12 +1,17 @@
 <template>
-  <section class="container mt-5">
-    <h1>Users List</h1>
-    <section class="row">
-      <section class="col-md-4" v-for="user in users "  :key="user.id" >
-        <card :user="user" ></card>
-      </section>
+
+    <section class="text-center">
+      <div v-if="loading" class="spinner-border text-center text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
     </section>
-  </section>
+
+
+      <section v-if="!loading" class="col-4" v-for="user in users" :key="user.id">
+        <Card :user="user" />
+      </section>
+
+
 </template>
 
 
@@ -14,13 +19,21 @@
 <script setup>
 import axios from 'axios'
 import {ref} from "vue";
-import card from '../../components/users/card'
+import Card from "@/components/users/card";
 
+let loading = ref(true)
 let users = ref([])
 
-axios.get('https://jsonplaceholder.typicode.com/users')
-    .then(response=>users.value = response.data)
-    .catch(()=>console.log('error'))
+function userReq(){
+  axios.get('https://jsonplaceholder.typicode.com/users')
+      .then(response=> {
+        users.value = response.data
+        loading.value=false
+      })
+      .catch(()=>console.log('error'))
+}
+
+userReq()
 
 </script>
 

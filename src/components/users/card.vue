@@ -22,6 +22,6 @@ const props =defineProps(['user'])
 
 <style scoped>
 .card{
-  margin: 5px;
+  margin: 10px;
 }
 </style>

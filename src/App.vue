@@ -1,9 +1,8 @@
 <template>
   <section>
     <header-component></header-component>
-    <router-view></router-view>
-
   </section>
+  <router-view></router-view>
   <FooterComponent></FooterComponent>
 </template>
 
