@@ -6,15 +6,14 @@
   </section>
 
 
-  <section v-if="!loading" class="col-4" :key="user.id">
+  <section v-if="!loading" class="col-4" :key="post.id">
+    <button class="btn btn-secondary">Update</button>
     <div class="card" style="width: 18rem;">
       <div class="card-header">
-        {{user.name}}
+        {{post.title}}
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">username: {{user.username}}</li>
-        <li class="list-group-item">email: {{user.email}}</li>
-        <li class="list-group-item">phone: {{user.phone}}</li>
+        <li class="list-group-item">{{post.body}}</li>
       </ul>
     </div>
   </section>
@@ -27,12 +26,12 @@ import {useRoute} from "vue-router/dist/vue-router";
 
 
 let loading = ref(true)
-const user = ref({})
+const post = ref({})
 
 function userReq(){
-  axios.get(`https://jsonplaceholder.typicode.com/users/${useRoute().params.id}`)
+  axios.get(`https://jsonplaceholder.typicode.com/posts/${useRoute().params.id}`)
       .then(response=> {
-        user.value = response.data
+        post.value = response.data
         loading.value=false
       })
       .catch(()=>console.log('error'))

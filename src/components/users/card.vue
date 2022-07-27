@@ -1,7 +1,7 @@
 <template>
   <div class="card" style="width: 18rem;">
     <div class="card-header">
-      {{props.user.name}}
+      <router-link :to="{name:'showUser',params:{id:user.id}}">{{props.user.name}}</router-link>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">username: {{props.user.username}}</li>

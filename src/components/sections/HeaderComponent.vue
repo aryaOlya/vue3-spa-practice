@@ -18,6 +18,7 @@
         </ul>
         <a class="navbar-brand" href="https://github.com/aryaOlya">aryaOlya</a>
       </div>
+
     </div>
   </nav>
 </template>
