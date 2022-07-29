@@ -6,7 +6,7 @@
     </div>
   </section>
 
-  <button class="btn btn-primary">Add Post</button>
+  <router-link class="btn btn-primary" :to="{name:'createPost'}">Add Post</router-link>
   <section v-if="!loading" class="col-4" v-for="post in posts" :key="post.id">
     <Card :post="post" />
   </section>
@@ -17,7 +17,7 @@
 <script setup>
 import axios from 'axios'
 import {ref} from "vue";
-import Card from "@/components/posts/card";
+import Card from "@/components/posts/Card";
 
 let loading = ref(true)
 let posts = ref([])

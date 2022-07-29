@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/style.css'
 
 
+
 const app = createApp(App)
 app.use(route)
 app.mount('#app')

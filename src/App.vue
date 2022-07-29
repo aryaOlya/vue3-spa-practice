@@ -8,7 +8,7 @@
 
 <script setup>
 import HeaderComponent from './components/sections/HeaderComponent'
-import FooterComponent from './components/sections/footer'
+import FooterComponent from './components/sections/Footer'
 
 
 </script>

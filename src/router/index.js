@@ -1,11 +1,13 @@
 import {createRouter,createWebHistory} from "vue-router/dist/vue-router";
 import HomeComponent from '../pages/HomeComponent'
-import index from '../pages/users/index'
-import postsIndex from '../pages/posts/index'
-import userTemplate from '../pages/templates/usersTemplate'
-import postsTemplate from '../pages/templates/postsTemplate'
-import showUser from '../pages/users/showUser'
-import showPost from '../pages/posts/showPost'
+import index from '../pages/users/Indexusers'
+import postsIndex from '../pages/posts/IndexPost'
+import userTemplate from '../pages/templates/UserTemplate'
+import postsTemplate from '../pages/templates/PostsTemplate'
+import showUser from '../pages/users/ShowUser'
+import showPost from '../pages/posts/ShowPost'
+import createPost from '../pages/posts/CreatePost'
+import updatePost from '../pages/posts/UpdatePost'
 
 const routes = [
     {path:'/',name:'home',component:HomeComponent},
@@ -15,7 +17,10 @@ const routes = [
         ]},
     {path:'/posts',name:'postsTemplate',component:postsTemplate,children:[
             {path:'',name:'postsIndex',component:postsIndex},
-            {path:':id',name:'showPost',component:showPost}
+            {path:':id',name:'showPost',component:showPost},
+            {path:'create',name:'createPost',component:createPost},
+            {path:'update/:id',name:'updatePost',component:updatePost},
+
         ]}
 ]
 

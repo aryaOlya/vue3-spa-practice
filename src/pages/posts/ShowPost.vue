@@ -5,9 +5,10 @@
     </div>
   </section>
 
-
+  <router-link class="btn btn-success" :to="{name:'updatePost',params:{id:useRoute().params.id}}">update</router-link>
+  <button class="btn btn-danger" @click="deletePost">delete</button>
   <section v-if="!loading" class="col-4" :key="post.id">
-    <button class="btn btn-secondary">Update</button>
+
     <div class="card" style="width: 18rem;">
       <div class="card-header">
         {{post.title}}
@@ -23,6 +24,7 @@
 import axios from "axios";
 import {ref} from "vue";
 import {useRoute} from "vue-router/dist/vue-router";
+import Swal from "sweetalert2";
 
 
 let loading = ref(true)
@@ -35,6 +37,20 @@ function userReq(){
         loading.value=false
       })
       .catch(()=>console.log('error'))
+}
+
+function deletePost() {
+  axios.delete(`https://jsonplaceholder.typicode.com/posts/${post.value.id}}`, {}).then(response => {
+    console.log(response)
+    Swal.fire(`title ${post.value.title} deleted successfully`)
+  })
+      .catch(() => {
+        console.log('error')
+        Swal.fire({
+          icon: 'error',
+          text: 'Something went wrong!',
+        })
+      })
 }
 
 userReq()

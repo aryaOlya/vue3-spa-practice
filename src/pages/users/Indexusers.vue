@@ -19,7 +19,7 @@
 <script setup>
 import axios from 'axios'
 import {ref} from "vue";
-import Card from "@/components/users/card";
+import Card from "@/components/users/Card";
 
 let loading = ref(true)
 let users = ref([])
