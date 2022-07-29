@@ -6,8 +6,8 @@
   </section>
 
 
-  <section v-if="!loading" class="col-4" :key="user.id">
-    <div class="card" style="width: 18rem;">
+  <section v-if="!loading" class="col-4 text-center" style="margin: 80px auto 480px auto" :key="user.id">
+    <div class="card" style="width: 18rem;margin: 0 auto">
       <div class="card-header">
         {{user.name}}
       </div>

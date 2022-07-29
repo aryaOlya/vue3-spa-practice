@@ -7,9 +7,9 @@
 
   <router-link class="btn btn-success" :to="{name:'updatePost',params:{id:useRoute().params.id}}">update</router-link>
   <button class="btn btn-danger" @click="deletePost">delete</button>
-  <section v-if="!loading" class="col-4" :key="post.id">
+  <section v-if="!loading" class="col-4 text-center" style="margin: 80px auto 480px auto" :key="post.id">
 
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem;margin: 0 auto">
       <div class="card-header">
         {{post.title}}
       </div>
